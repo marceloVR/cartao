@@ -1,0 +1,58 @@
+body {
+    display: flex; /*  */
+    align-items: center; 
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: url(fami.jpg);
+    background-size: cover;
+}
+.espaco {
+    height: 300px;
+    width: 300px;  
+}
+
+.coracao {
+    height: 100px;
+    width: 100px;  
+    background: red;
+    transform: rotate(-45deg) scale(1);
+    animation: pulsar 1s linear infinite;
+}
+
+@keyframes pulsar {
+    0%{
+        transform: rotate(-45deg) scale(1);
+    }
+    30%{
+        transform: translateY(100px) rotate(-45deg) scale(1.5);
+    }
+    60%{
+        transform: translateY(0px) rotate(-45deg) scale(0.6);
+    }
+    80%{
+        transform: translateY(100px) rotate(-45deg) scale(1.2);
+    }
+}
+
+.coracao::after {
+    content: '';
+    background: red;
+    height: 100px;
+    width: 100px;
+    position:absolute;
+    top:-50%;
+    border-radius: 50%;
+
+}
+.coracao::before {
+    content: '';
+    background: red;
+    height: 100px;
+    width: 100px;
+    position:absolute;
+    right:-50%;
+    top: 0;
+    border-radius: 50%;
+
+}
